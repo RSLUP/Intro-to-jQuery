@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>AJAX</h1>
+    <div id="container"></div>
+
+    <ul id="list"></ul>
+
+    <script>
+      //   $('#container').load('test.html', function (response, status, xhr) {
+      //     if (status === 'error') {
+      //       alert('Error');
+      //     }
+      //   });
+
+      //   $.getJSON('https://jsonplaceholder.typicode.com/users', function (data) {
+      //     $.each(data, function (i, user) {
+      //       $('ul#list').append('<li>' + user.name + '</li>');
+      //     });
+      //   });
+
+      $.ajax({
+        method: 'GET',
+        url: 'https://jsonplaceholder.typicode.com/users',
+        dataType: 'json',
+        success: function (data) {
+          $.map(data, function (user, i) {
+            $('ul#list').append('<li>' + user.name + '</li>');
+          });
+        },
+        error: function (error) {
+          console.log(error);
+        },
+      });
+    </script>
+  </body>
+</html>
