@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>UI</h1>
+
+    <label for="tags">Name</label>
+    <input id="tags" />
+
+    <script>
+      $(function () {
+        var sources = [];
+
+        $.ajax({
+          method: 'GET',
+          url: 'https://jsonplaceholder.typicode.com/users',
+          dataType: 'json',
+          success: function (data) {
+            $.map(data, function (user, i) {
+              sources.push(user.name);
+            });
+          },
+          error: function (error) {
+            console.log(error);
+          },
+        });
+
+        $('#tags').autocomplete({
+          source: sources,
+        });
+      });
+    </script>
+  </body>
+</html>
