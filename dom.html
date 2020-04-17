@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .custom-para {
+        color: red;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>DOM</h1>
+
+    <p id="para1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sequi,
+      commodi et temporibus, rerum magnam enim distinctio nostrum delectus sint
+      asperiores corrupti odio exercitationem repellendus, minima officiis illum
+      eum amet?
+    </p>
+
+    <script>
+      //   $('#para1').on('mouseenter', function () {
+      //     $(this).addClass('custom-para');
+      //   });
+      //   $('#para1').on('mouseleave', function () {
+      //     $(this).removeClass('custom-para');
+      //   });
+      //   $('#para1').hover(
+      //     function () {
+      //       $(this).addClass('custom-para');
+      //     },
+      //     function () {
+      //       $(this).removeClass('custom-para');
+      //     }
+      //   );
+      $('#para1').hover(function () {
+        $(this).toggleClass('custom-para');
+      });
+    </script>
+  </body>
+</html>
