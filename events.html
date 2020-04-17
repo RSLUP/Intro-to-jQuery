@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- <script>
+      $(document).ready(function () {
+        $('#btn1').click(function () {
+          alert('Clicked Button 1');
+        });
+      });
+    </script> -->
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Events</h1>
+
+    <button id="btn1">Click Me</button>
+    <button id="btn2">Click Me</button>
+
+    <p class="para1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque odit
+      eveniet, reiciendis quia fuga assumenda maiores et minima dicta non, at
+      ipsa repudiandae consequuntur, adipisci nobis incidunt sapiente esse!
+      Dolor.
+    </p>
+
+    <h1 id="coords"></h1>
+
+    <script>
+      //   $('#btn1').click(function () {
+      //     $('.para1').hide();
+      //   });
+      //   $('#btn2').click(function () {
+      //     $('.para1').show();
+      //     $('#btn1').text('Click To Hide');
+      //   });
+
+      $('#btn1').on('click', function () {
+        $('.para1').hide();
+        // $('#btn1').text('Click To Hide');
+      });
+
+      $(document).on('mousemove', function (e) {
+        $('#coords').html(`Coords> Y: ${e.clientY} X: ${e.clientX}`);
+      });
+    </script>
+  </body>
+</html>
