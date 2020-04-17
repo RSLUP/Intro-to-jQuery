@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.0.min.js"
+      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Selectors</h1>
+    <h1 id="heading2">Selectors rr</h1>
+    <h1 class="custom-header">Selectors rr</h1>
+
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+      <li>Item 6</li>
+      <li>Item 7</li>
+      <li>Item 8</li>
+      <li>Item 9</li>
+    </ul>
+
+    <script>
+      $('h1').css('color', 'red');
+      $('h1#heading2').css('color', 'green');
+      $('.custom-header').css('color', 'yellow');
+
+      $('ul li:nth-child(3n)').css('color', 'blue');
+    </script>
+  </body>
+</html>
